@@ -10,7 +10,7 @@ int main()
     do{
         int numeroUno;
         int numeroDos;
-
+        int flag8=1;
         int resultado;
         float resultadoF;
 
@@ -41,48 +41,67 @@ int main()
             printf("ha ingresado el numero: %d \n", numeroDos);
             flagNumeroDos=0;
             break;
+
+        case(8):
+            flag8=0;
         case(3):
             if(hayNumeros(flagNumeroUno,flagNumeroDos)==0)
             {
-                suma(numeroUno,numeroDos,&resultado);
+               if(suma(numeroUno,numeroDos,&resultado)==0)
                 printf("el resultado de la suma es: %d \n", resultado);
+                else
+                    printf("overflow \n");
             }
+            if(flag8)
             break;
         case(4):
             if(hayNumeros(flagNumeroUno,flagNumeroDos)==0)
             {
-                resta(numeroUno,numeroDos,&resultado);
+                if(resta(numeroUno,numeroDos,&resultado)==0)
                 printf("el resultado de la resta es: %d \n", resultado);
+                else
+                    printf("overflow \n");
             }
+            if(flag8)
             break;
         case(5):
             if(hayNumeros(flagNumeroUno,flagNumeroDos)==0)
             {
-                dividir(numeroUno,numeroDos,&resultadoF);
+                if(dividir(numeroUno,numeroDos,&resultadoF)==0)
                 printf("el resultado de la division es: %.2f \n", resultadoF);
+                else
+                    printf("resultado indeterminado \n");
             }
+            if(flag8)
             break;
         case(6):
-if(hayNumeros(flagNumeroUno,flagNumeroDos)==0)
+            if(hayNumeros(flagNumeroUno,flagNumeroDos)==0)
             {
-                multiplicar(numeroUno,numeroDos,&resultado);
+                if(multiplicar(numeroUno,numeroDos,&resultado)==0)
                 printf("el resultado de la multiplicacion es: %d \n", resultado);
+                else
+                    printf("overflow \n");
             }
+            if(flag8)
             break;
+
         case(7):
             if(flagNumeroUno==0)
             {
-                if(factorial(numeroUno, &resultado)==0)
+                int devolucionFuncion=factorial(numeroUno, &resultado);
+                if(devolucionFuncion==0)
                 printf("el factorial de %d es: %d \n",numeroUno,resultado);
-                else
+                else if(devolucionFuncion==-1)
                 printf("operacion invalida, el operando debe ser mayor a cero \n");
+                else
+                    printf("overflow \n");
             }
             else
             {
                 printf("debe ingresar el primer numero \n\n");
             }
             break;
-        case(8):
+        /*case(8):
             if(hayNumeros(flagNumeroUno, flagNumeroDos)==0)
                 {
                     suma(numeroUno, numeroDos, &resultado);
@@ -100,7 +119,7 @@ if(hayNumeros(flagNumeroUno,flagNumeroDos)==0)
                     printf("%d!= %d\n\n",numeroUno,resultado);
                 }
 
-            break;
+            break;*/
         default:
             break;
         }

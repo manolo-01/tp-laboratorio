@@ -176,13 +176,17 @@ int factorial(int numero, int *resultado)
 {
 	int retorno=-1;
 	int i;
-	int auxFactorial=1;
+	long auxFactorial=1;
 	if (numero>0)
 	{
-	for(i=1;i<=numero;i++)
-	auxFactorial=auxFactorial*i;
-	*resultado=auxFactorial;
-	retorno=0;
+        for(i=1;i<=numero;i++)
+        auxFactorial=auxFactorial*i;
+        if(auxFactorial<32767)
+        {
+        *resultado=auxFactorial;
+        retorno=0;
+        }
+        retorno=-2;
 	}
 	return retorno;
 }

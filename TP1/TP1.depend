@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1523502602 source:e:\calculadora\tp1\file.c
+1523579112 source:e:\calculadora\tp1\file.c
 	<stdio.h>
 	<stdlib.h>
 
-1523502664 source:e:\calculadora\tp1\main.c
+1523503212 source:e:\calculadora\tp1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"file.h"
